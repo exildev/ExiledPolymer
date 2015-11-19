@@ -1,898 +1,4 @@
-<html><head><meta charset="UTF-8"><style>
-  /* IE 10 support for HTML5 hidden attr */
-  [hidden] {
-    display: none !important;
-  }
-</style>
-
-<style is="custom-style">
-  :root {
-
-    --layout: {
-      display: -ms-flexbox;
-      display: -webkit-flex;
-      display: flex;
-    };
-
-    --layout-inline: {
-      display: -ms-inline-flexbox;
-      display: -webkit-inline-flex;
-      display: inline-flex;
-    };
-
-    --layout-horizontal: {
-      /* @apply(--layout); */
-      display: -ms-flexbox;
-      display: -webkit-flex;
-      display: flex;
-
-      -ms-flex-direction: row;
-      -webkit-flex-direction: row;
-      flex-direction: row;
-    };
-
-    --layout-horizontal-reverse: {
-      -ms-flex-direction: row-reverse;
-      -webkit-flex-direction: row-reverse;
-      flex-direction: row-reverse;
-    };
-
-    --layout-vertical: {
-      /* @apply(--layout); */
-      display: -ms-flexbox;
-      display: -webkit-flex;
-      display: flex;
-
-      -ms-flex-direction: column;
-      -webkit-flex-direction: column;
-      flex-direction: column;
-    };
-
-    --layout-vertical-reverse: {
-      -ms-flex-direction: column-reverse;
-      -webkit-flex-direction: column-reverse;
-      flex-direction: column-reverse;
-    };
-
-    --layout-wrap: {
-      -ms-flex-wrap: wrap;
-      -webkit-flex-wrap: wrap;
-      flex-wrap: wrap;
-    };
-
-    --layout-wrap-reverse: {
-      -ms-flex-wrap: wrap-reverse;
-      -webkit-flex-wrap: wrap-reverse;
-      flex-wrap: wrap-reverse;
-    };
-
-    --layout-flex-auto: {
-      -ms-flex: 1 1 auto;
-      -webkit-flex: 1 1 auto;
-      flex: 1 1 auto;
-    };
-
-    --layout-flex-none: {
-      -ms-flex: none;
-      -webkit-flex: none;
-      flex: none;
-    };
-
-    --layout-flex: {
-      -ms-flex: 1 1 0.000000001px;
-      -webkit-flex: 1;
-      flex: 1;
-      -webkit-flex-basis: 0.000000001px;
-      flex-basis: 0.000000001px;
-    };
-
-    --layout-flex-2: {
-      -ms-flex: 2;
-      -webkit-flex: 2;
-      flex: 2;
-    };
-
-    --layout-flex-3: {
-      -ms-flex: 3;
-      -webkit-flex: 3;
-      flex: 3;
-    };
-
-    --layout-flex-4: {
-      -ms-flex: 4;
-      -webkit-flex: 4;
-      flex: 4;
-    };
-
-    --layout-flex-5: {
-      -ms-flex: 5;
-      -webkit-flex: 5;
-      flex: 5;
-    };
-
-    --layout-flex-6: {
-      -ms-flex: 6;
-      -webkit-flex: 6;
-      flex: 6;
-    };
-
-    --layout-flex-7: {
-      -ms-flex: 7;
-      -webkit-flex: 7;
-      flex: 7;
-    };
-
-    --layout-flex-8: {
-      -ms-flex: 8;
-      -webkit-flex: 8;
-      flex: 8;
-    };
-
-    --layout-flex-9: {
-      -ms-flex: 9;
-      -webkit-flex: 9;
-      flex: 9;
-    };
-
-    --layout-flex-10: {
-      -ms-flex: 10;
-      -webkit-flex: 10;
-      flex: 10;
-    };
-
-    --layout-flex-11: {
-      -ms-flex: 11;
-      -webkit-flex: 11;
-      flex: 11;
-    };
-
-    --layout-flex-12: {
-      -ms-flex: 12;
-      -webkit-flex: 12;
-      flex: 12;
-    };
-
-    /* alignment in cross axis */
-
-    --layout-start: {
-      -ms-flex-align: start;
-      -webkit-align-items: flex-start;
-      align-items: flex-start;
-    };
-
-    --layout-center: {
-      -ms-flex-align: center;
-      -webkit-align-items: center;
-      align-items: center;
-    };
-
-    --layout-end: {
-      -ms-flex-align: end;
-      -webkit-align-items: flex-end;
-      align-items: flex-end;
-    };
-
-    /* alignment in main axis */
-
-    --layout-start-justified: {
-      -ms-flex-pack: start;
-      -webkit-justify-content: flex-start;
-      justify-content: flex-start;
-    };
-
-    --layout-center-justified: {
-      -ms-flex-pack: center;
-      -webkit-justify-content: center;
-      justify-content: center;
-    };
-
-    --layout-end-justified: {
-      -ms-flex-pack: end;
-      -webkit-justify-content: flex-end;
-      justify-content: flex-end;
-    };
-
-    --layout-around-justified: {
-      -ms-flex-pack: around;
-      -webkit-justify-content: space-around;
-      justify-content: space-around;
-    };
-
-    --layout-justified: {
-      -ms-flex-pack: justify;
-      -webkit-justify-content: space-between;
-      justify-content: space-between;
-    };
-
-    --layout-center-center: {
-      /* @apply(--layout-center --layout-center-justified); */
-      -ms-flex-align: center;
-      -webkit-align-items: center;
-      align-items: center;
-      -ms-flex-pack: center;
-      -webkit-justify-content: center;
-      justify-content: center;
-    };
-
-    /* self alignment */
-
-    --layout-self-start: {
-      -ms-align-self: flex-start;
-      -webkit-align-self: flex-start;
-      align-self: flex-start;
-    };
-
-    --layout-self-center: {
-      -ms-align-self: center;
-      -webkit-align-self: center;
-      align-self: center;
-    };
-
-    --layout-self-end: {
-      -ms-align-self: flex-end;
-      -webkit-align-self: flex-end;
-      align-self: flex-end;
-    };
-
-    --layout-self-stretch: {
-      -ms-align-self: stretch;
-      -webkit-align-self: stretch;
-      align-self: stretch;
-    };
-
-    /*******************************
-              Other Layout
-    *******************************/
-
-    --layout-block: {
-      display: block;
-    };
-
-    --layout-invisible: {
-      visibility: hidden !important;
-    };
-
-    --layout-relative: {
-      position: relative;
-    };
-
-    --layout-fit: {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-    };
-
-    --layout-scroll: {
-      -webkit-overflow-scrolling: touch;
-      overflow: auto;
-    };
-
-    /* fixed position */
-
-    --layout-fixed-top: {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-    };
-
-    --layout-fixed-right: {
-      position: fixed;
-      top: 0;
-      right: 0;
-      bottom: 0;
-    };
-
-    --layout-fixed-bottom: {
-      position: fixed;
-      right: 0;
-      bottom: 0;
-      left: 0;
-    };
-
-    --layout-fixed-left: {
-      position: fixed;
-      top: 0;
-      bottom: 0;
-      left: 0;
-    };
-
-  }
-
-</style>
-<style>
-
-  /*******************************
-            Flex Layout
-  *******************************/
-
-  html /deep/ .layout.horizontal,
-  html /deep/ .layout.horizontal-reverse,
-  html /deep/ .layout.vertical,
-  html /deep/ .layout.vertical-reverse {
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-  }
-
-  html /deep/ .layout.inline {
-    display: -ms-inline-flexbox;
-    display: -webkit-inline-flex;
-    display: inline-flex;
-  }
-
-  html /deep/ .layout.horizontal {
-    -ms-flex-direction: row;
-    -webkit-flex-direction: row;
-    flex-direction: row;
-  }
-
-  html /deep/ .layout.horizontal-reverse {
-    -ms-flex-direction: row-reverse;
-    -webkit-flex-direction: row-reverse;
-    flex-direction: row-reverse;
-  }
-
-  html /deep/ .layout.vertical {
-    -ms-flex-direction: column;
-    -webkit-flex-direction: column;
-    flex-direction: column;
-  }
-
-  html /deep/ .layout.vertical-reverse {
-    -ms-flex-direction: column-reverse;
-    -webkit-flex-direction: column-reverse;
-    flex-direction: column-reverse;
-  }
-
-  html /deep/ .layout.wrap {
-    -ms-flex-wrap: wrap;
-    -webkit-flex-wrap: wrap;
-    flex-wrap: wrap;
-  }
-
-  html /deep/ .layout.wrap-reverse {
-    -ms-flex-wrap: wrap-reverse;
-    -webkit-flex-wrap: wrap-reverse;
-    flex-wrap: wrap-reverse;
-  }
-
-  html /deep/ .flex-auto {
-    -ms-flex: 1 1 auto;
-    -webkit-flex: 1 1 auto;
-    flex: 1 1 auto;
-  }
-
-  html /deep/ .flex-none {
-    -ms-flex: none;
-    -webkit-flex: none;
-    flex: none;
-  }
-
-  html /deep/ .flex,
-  html /deep/ .flex-1 {
-    -ms-flex: 1;
-    -webkit-flex: 1;
-    flex: 1;
-  }
-
-  html /deep/ .flex-2 {
-    -ms-flex: 2;
-    -webkit-flex: 2;
-    flex: 2;
-  }
-
-  html /deep/ .flex-3 {
-    -ms-flex: 3;
-    -webkit-flex: 3;
-    flex: 3;
-  }
-
-  html /deep/ .flex-4 {
-    -ms-flex: 4;
-    -webkit-flex: 4;
-    flex: 4;
-  }
-
-  html /deep/ .flex-5 {
-    -ms-flex: 5;
-    -webkit-flex: 5;
-    flex: 5;
-  }
-
-  html /deep/ .flex-6 {
-    -ms-flex: 6;
-    -webkit-flex: 6;
-    flex: 6;
-  }
-
-  html /deep/ .flex-7 {
-    -ms-flex: 7;
-    -webkit-flex: 7;
-    flex: 7;
-  }
-
-  html /deep/ .flex-8 {
-    -ms-flex: 8;
-    -webkit-flex: 8;
-    flex: 8;
-  }
-
-  html /deep/ .flex-9 {
-    -ms-flex: 9;
-    -webkit-flex: 9;
-    flex: 9;
-  }
-
-  html /deep/ .flex-10 {
-    -ms-flex: 10;
-    -webkit-flex: 10;
-    flex: 10;
-  }
-
-  html /deep/ .flex-11 {
-    -ms-flex: 11;
-    -webkit-flex: 11;
-    flex: 11;
-  }
-
-  html /deep/ .flex-12 {
-    -ms-flex: 12;
-    -webkit-flex: 12;
-    flex: 12;
-  }
-
-  /* alignment in cross axis */
-
-  html /deep/ .layout.start {
-    -ms-flex-align: start;
-    -webkit-align-items: flex-start;
-    align-items: flex-start;
-  }
-
-  html /deep/ .layout.center,
-  html /deep/ .layout.center-center {
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
-  }
-
-  html /deep/ .layout.end {
-    -ms-flex-align: end;
-    -webkit-align-items: flex-end;
-    align-items: flex-end;
-  }
-
-  /* alignment in main axis */
-
-  html /deep/ .layout.start-justified {
-    -ms-flex-pack: start;
-    -webkit-justify-content: flex-start;
-    justify-content: flex-start;
-  }
-
-  html /deep/ .layout.center-justified,
-  html /deep/ .layout.center-center {
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-  }
-
-  html /deep/ .layout.end-justified {
-    -ms-flex-pack: end;
-    -webkit-justify-content: flex-end;
-    justify-content: flex-end;
-  }
-
-  html /deep/ .layout.around-justified {
-    -ms-flex-pack: around;
-    -webkit-justify-content: space-around;
-    justify-content: space-around;
-  }
-
-  html /deep/ .layout.justified {
-    -ms-flex-pack: justify;
-    -webkit-justify-content: space-between;
-    justify-content: space-between;
-  }
-
-  /* self alignment */
-
-  html /deep/ .self-start {
-    -ms-align-self: flex-start;
-    -webkit-align-self: flex-start;
-    align-self: flex-start;
-  }
-
-  html /deep/ .self-center {
-    -ms-align-self: center;
-    -webkit-align-self: center;
-    align-self: center;
-  }
-
-  html /deep/ .self-end {
-    -ms-align-self: flex-end;
-    -webkit-align-self: flex-end;
-    align-self: flex-end;
-  }
-
-  html /deep/ .self-stretch {
-    -ms-align-self: stretch;
-    -webkit-align-self: stretch;
-    align-self: stretch;
-  }
-
-  /*******************************
-            Other Layout
-  *******************************/
-
-  html /deep/ .block {
-    display: block;
-  }
-
-  /* IE 10 support for HTML5 hidden attr */
-  html /deep/ [hidden] {
-    display: none !important;
-  }
-
-  html /deep/ .invisible {
-    visibility: hidden !important;
-  }
-
-  html /deep/ .relative {
-    position: relative;
-  }
-
-  html /deep/ .fit {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-  }
-
-  body.fullbleed {
-    margin: 0;
-    height: 100vh;
-  }
-
-  html /deep/ .scroll {
-    -webkit-overflow-scrolling: touch;
-    overflow: auto;
-  }
-
-  .fixed-bottom,
-  .fixed-left,
-  .fixed-right,
-  .fixed-top {
-    position: fixed;
-  }
-
-  html /deep/ .fixed-top {
-    top: 0;
-    left: 0;
-    right: 0;
-  }
-
-  html /deep/ .fixed-right {
-    top: 0;
-    right: 0;
-    botttom: 0;
-  }
-
-  html /deep/ .fixed-bottom {
-    right: 0;
-    bottom: 0;
-    left: 0;
-  }
-
-  html /deep/ .fixed-left {
-    top: 0;
-    botttom: 0;
-    left: 0;
-  }
-
-</style>
-<style>
-
-  /*******************************
-            Flex Layout
-  *******************************/
-
-  .layout.horizontal,
-  .layout.horizontal-reverse,
-  .layout.vertical,
-  .layout.vertical-reverse {
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-  }
-
-  .layout.inline {
-    display: -ms-inline-flexbox;
-    display: -webkit-inline-flex;
-    display: inline-flex;
-  }
-
-  .layout.horizontal {
-    -ms-flex-direction: row;
-    -webkit-flex-direction: row;
-    flex-direction: row;
-  }
-
-  .layout.horizontal-reverse {
-    -ms-flex-direction: row-reverse;
-    -webkit-flex-direction: row-reverse;
-    flex-direction: row-reverse;
-  }
-
-  .layout.vertical {
-    -ms-flex-direction: column;
-    -webkit-flex-direction: column;
-    flex-direction: column;
-  }
-
-  .layout.vertical-reverse {
-    -ms-flex-direction: column-reverse;
-    -webkit-flex-direction: column-reverse;
-    flex-direction: column-reverse;
-  }
-
-  .layout.wrap {
-    -ms-flex-wrap: wrap;
-    -webkit-flex-wrap: wrap;
-    flex-wrap: wrap;
-  }
-
-  .layout.wrap-reverse {
-    -ms-flex-wrap: wrap-reverse;
-    -webkit-flex-wrap: wrap-reverse;
-    flex-wrap: wrap-reverse;
-  }
-
-  .flex-auto {
-    -ms-flex: 1 1 auto;
-    -webkit-flex: 1 1 auto;
-    flex: 1 1 auto;
-  }
-
-  .flex-none {
-    -ms-flex: none;
-    -webkit-flex: none;
-    flex: none;
-  }
-
-  .flex,
-  .flex-1 {
-    -ms-flex: 1;
-    -webkit-flex: 1;
-    flex: 1;
-  }
-
-  .flex-2 {
-    -ms-flex: 2;
-    -webkit-flex: 2;
-    flex: 2;
-  }
-
-  .flex-3 {
-    -ms-flex: 3;
-    -webkit-flex: 3;
-    flex: 3;
-  }
-
-  .flex-4 {
-    -ms-flex: 4;
-    -webkit-flex: 4;
-    flex: 4;
-  }
-
-  .flex-5 {
-    -ms-flex: 5;
-    -webkit-flex: 5;
-    flex: 5;
-  }
-
-  .flex-6 {
-    -ms-flex: 6;
-    -webkit-flex: 6;
-    flex: 6;
-  }
-
-  .flex-7 {
-    -ms-flex: 7;
-    -webkit-flex: 7;
-    flex: 7;
-  }
-
-  .flex-8 {
-    -ms-flex: 8;
-    -webkit-flex: 8;
-    flex: 8;
-  }
-
-  .flex-9 {
-    -ms-flex: 9;
-    -webkit-flex: 9;
-    flex: 9;
-  }
-
-  .flex-10 {
-    -ms-flex: 10;
-    -webkit-flex: 10;
-    flex: 10;
-  }
-
-  .flex-11 {
-    -ms-flex: 11;
-    -webkit-flex: 11;
-    flex: 11;
-  }
-
-  .flex-12 {
-    -ms-flex: 12;
-    -webkit-flex: 12;
-    flex: 12;
-  }
-
-  /* alignment in cross axis */
-
-  .layout.start {
-    -ms-flex-align: start;
-    -webkit-align-items: flex-start;
-    align-items: flex-start;
-  }
-
-  .layout.center,
-  .layout.center-center {
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
-  }
-
-  .layout.end {
-    -ms-flex-align: end;
-    -webkit-align-items: flex-end;
-    align-items: flex-end;
-  }
-
-  /* alignment in main axis */
-
-  .layout.start-justified {
-    -ms-flex-pack: start;
-    -webkit-justify-content: flex-start;
-    justify-content: flex-start;
-  }
-
-  .layout.center-justified,
-  .layout.center-center {
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-  }
-
-  .layout.end-justified {
-    -ms-flex-pack: end;
-    -webkit-justify-content: flex-end;
-    justify-content: flex-end;
-  }
-
-  .layout.around-justified {
-    -ms-flex-pack: around;
-    -webkit-justify-content: space-around;
-    justify-content: space-around;
-  }
-
-  .layout.justified {
-    -ms-flex-pack: justify;
-    -webkit-justify-content: space-between;
-    justify-content: space-between;
-  }
-
-  /* self alignment */
-
-  .self-start {
-    -ms-align-self: flex-start;
-    -webkit-align-self: flex-start;
-    align-self: flex-start;
-  }
-
-  .self-center {
-    -ms-align-self: center;
-    -webkit-align-self: center;
-    align-self: center;
-  }
-
-  .self-end {
-    -ms-align-self: flex-end;
-    -webkit-align-self: flex-end;
-    align-self: flex-end;
-  }
-
-  .self-stretch {
-    -ms-align-self: stretch;
-    -webkit-align-self: stretch;
-    align-self: stretch;
-  }
-
-  /*******************************
-            Other Layout
-  *******************************/
-
-  .block {
-    display: block;
-  }
-
-  /* IE 10 support for HTML5 hidden attr */
-  [hidden] {
-    display: none !important;
-  }
-
-  .invisible {
-    visibility: hidden !important;
-  }
-
-  .relative {
-    position: relative;
-  }
-
-  .fit {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-  }
-
-  body.fullbleed {
-    margin: 0;
-    height: 100vh;
-  }
-
-  .scroll {
-    -webkit-overflow-scrolling: touch;
-    overflow: auto;
-  }
-
-  /* fixed position */
-
-  .fixed-bottom,
-  .fixed-left,
-  .fixed-right,
-  .fixed-top {
-    position: fixed;
-  }
-
-  .fixed-top {
-    top: 0;
-    left: 0;
-    right: 0;
-  }
-
-  .fixed-right {
-    top: 0;
-    right: 0;
-    bottom: 0;
-  }
-
-  .fixed-bottom {
-    right: 0;
-    bottom: 0;
-    left: 0;
-  }
-
-  .fixed-left {
-    top: 0;
-    bottom: 0;
-    left: 0;
-  }
-
-</style>
-
-
-<style is="custom-style">
+<html><head><meta charset="UTF-8"><style is="custom-style">
 
   :root {
 
@@ -1200,95 +306,15 @@
 
     /* opacity for dark text on a light background */
     --dark-divider-opacity: 0.12;
-    --dark-disabled-opacity: 0.26; /* or hint text */
-    --dark-secondary-opacity: 0.54; /* or icon */
+    --dark-disabled-opacity: 0.38; /* or hint text or icon */
+    --dark-secondary-opacity: 0.54;
     --dark-primary-opacity: 0.87;
 
     /* opacity for light text on a dark background */
     --light-divider-opacity: 0.12;
-    --light-disabled-opacity: 0.3; /* or hint text */
-    --light-secondary-opacity: 0.7; /* or icon */
+    --light-disabled-opacity: 0.3; /* or hint text or icon */
+    --light-secondary-opacity: 0.7;
     --light-primary-opacity: 1.0;
-
-  }
-
-</style>
-<style is="custom-style">
-
-  :root {
-
-    --dark-primary-color: #303f9f;
-
-    --default-primary-color: #3f51b5;
-
-    --light-primary-color: #c5cae9;
-
-    --text-primary-color: #ffffff;
-
-    --accent-color: #ff4081;
-
-    --primary-background-color: #ffffff;
-
-    --primary-text-color: #212121;
-
-    --secondary-text-color: #757575;
-
-    --disabled-text-color: #bdbdbd;
-
-    --divider-color: #e0e0e0;
-
-  }
-
-</style>
-<style is="custom-style">
-
-  :root {
-
-    --shadow-transition: {
-      transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-    };
-
-    --shadow-none: {
-      box-shadow: none;
-    };
-
-    /* from http://codepen.io/shyndman/pen/c5394ddf2e8b2a5c9185904b57421cdb */
-
-    --shadow-elevation-2dp: {
-      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
-                  0 1px 5px 0 rgba(0, 0, 0, 0.12),
-                  0 3px 1px -2px rgba(0, 0, 0, 0.2);
-    };
-
-    --shadow-elevation-3dp: {
-      box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14),
-                  0 1px 8px 0 rgba(0, 0, 0, 0.12),
-                  0 3px 3px -2px rgba(0, 0, 0, 0.4);
-    };
-
-    --shadow-elevation-4dp: {
-      box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
-                  0 1px 10px 0 rgba(0, 0, 0, 0.12),
-                  0 2px 4px -1px rgba(0, 0, 0, 0.4);
-    };
-
-    --shadow-elevation-6dp: {
-      box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14),
-                  0 1px 18px 0 rgba(0, 0, 0, 0.12),
-                  0 3px 5px -1px rgba(0, 0, 0, 0.4);
-    };
-
-    --shadow-elevation-8dp: {
-      box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
-                  0 3px 14px 2px rgba(0, 0, 0, 0.12),
-                  0 5px 5px -3px rgba(0, 0, 0, 0.4);
-    };
-
-    --shadow-elevation-16dp: {
-      box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14),
-                  0  6px 30px 5px rgba(0, 0, 0, 0.12),
-                  0  8px 10px -5px rgba(0, 0, 0, 0.4);
-    };
 
   }
 
@@ -1511,6 +537,989 @@
   }
 
 </style>
+<style is="custom-style">
+
+  :root {
+
+    --dark-primary-color: #303f9f;
+
+    --default-primary-color: #3f51b5;
+
+    --light-primary-color: #c5cae9;
+
+    --text-primary-color: #ffffff;
+
+    --accent-color: #ff4081;
+
+    --primary-background-color: #ffffff;
+
+    --primary-text-color: #212121;
+
+    --secondary-text-color: #757575;
+
+    --disabled-text-color: #bdbdbd;
+
+    --divider-color: #e0e0e0;
+
+  }
+
+</style>
+
+
+<style>
+  /* IE 10 support for HTML5 hidden attr */
+  [hidden] {
+    display: none !important;
+  }
+</style>
+
+<style is="custom-style">
+  :root {
+
+    --layout: {
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+    };
+
+    --layout-inline: {
+      display: -ms-inline-flexbox;
+      display: -webkit-inline-flex;
+      display: inline-flex;
+    };
+
+    --layout-horizontal: {
+      /* @apply(--layout); */
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+
+      -ms-flex-direction: row;
+      -webkit-flex-direction: row;
+      flex-direction: row;
+    };
+
+    --layout-horizontal-reverse: {
+      -ms-flex-direction: row-reverse;
+      -webkit-flex-direction: row-reverse;
+      flex-direction: row-reverse;
+    };
+
+    --layout-vertical: {
+      /* @apply(--layout); */
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+
+      -ms-flex-direction: column;
+      -webkit-flex-direction: column;
+      flex-direction: column;
+    };
+
+    --layout-vertical-reverse: {
+      -ms-flex-direction: column-reverse;
+      -webkit-flex-direction: column-reverse;
+      flex-direction: column-reverse;
+    };
+
+    --layout-wrap: {
+      -ms-flex-wrap: wrap;
+      -webkit-flex-wrap: wrap;
+      flex-wrap: wrap;
+    };
+
+    --layout-wrap-reverse: {
+      -ms-flex-wrap: wrap-reverse;
+      -webkit-flex-wrap: wrap-reverse;
+      flex-wrap: wrap-reverse;
+    };
+
+    --layout-flex-auto: {
+      -ms-flex: 1 1 auto;
+      -webkit-flex: 1 1 auto;
+      flex: 1 1 auto;
+    };
+
+    --layout-flex-none: {
+      -ms-flex: none;
+      -webkit-flex: none;
+      flex: none;
+    };
+
+    --layout-flex: {
+      -ms-flex: 1 1 0.000000001px;
+      -webkit-flex: 1;
+      flex: 1;
+      -webkit-flex-basis: 0.000000001px;
+      flex-basis: 0.000000001px;
+    };
+
+    --layout-flex-2: {
+      -ms-flex: 2;
+      -webkit-flex: 2;
+      flex: 2;
+    };
+
+    --layout-flex-3: {
+      -ms-flex: 3;
+      -webkit-flex: 3;
+      flex: 3;
+    };
+
+    --layout-flex-4: {
+      -ms-flex: 4;
+      -webkit-flex: 4;
+      flex: 4;
+    };
+
+    --layout-flex-5: {
+      -ms-flex: 5;
+      -webkit-flex: 5;
+      flex: 5;
+    };
+
+    --layout-flex-6: {
+      -ms-flex: 6;
+      -webkit-flex: 6;
+      flex: 6;
+    };
+
+    --layout-flex-7: {
+      -ms-flex: 7;
+      -webkit-flex: 7;
+      flex: 7;
+    };
+
+    --layout-flex-8: {
+      -ms-flex: 8;
+      -webkit-flex: 8;
+      flex: 8;
+    };
+
+    --layout-flex-9: {
+      -ms-flex: 9;
+      -webkit-flex: 9;
+      flex: 9;
+    };
+
+    --layout-flex-10: {
+      -ms-flex: 10;
+      -webkit-flex: 10;
+      flex: 10;
+    };
+
+    --layout-flex-11: {
+      -ms-flex: 11;
+      -webkit-flex: 11;
+      flex: 11;
+    };
+
+    --layout-flex-12: {
+      -ms-flex: 12;
+      -webkit-flex: 12;
+      flex: 12;
+    };
+
+    /* alignment in cross axis */
+
+    --layout-start: {
+      -ms-flex-align: start;
+      -webkit-align-items: flex-start;
+      align-items: flex-start;
+    };
+
+    --layout-center: {
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+    };
+
+    --layout-end: {
+      -ms-flex-align: end;
+      -webkit-align-items: flex-end;
+      align-items: flex-end;
+    };
+
+    /* alignment in main axis */
+
+    --layout-start-justified: {
+      -ms-flex-pack: start;
+      -webkit-justify-content: flex-start;
+      justify-content: flex-start;
+    };
+
+    --layout-center-justified: {
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+    };
+
+    --layout-end-justified: {
+      -ms-flex-pack: end;
+      -webkit-justify-content: flex-end;
+      justify-content: flex-end;
+    };
+
+    --layout-around-justified: {
+      -ms-flex-pack: around;
+      -webkit-justify-content: space-around;
+      justify-content: space-around;
+    };
+
+    --layout-justified: {
+      -ms-flex-pack: justify;
+      -webkit-justify-content: space-between;
+      justify-content: space-between;
+    };
+
+    --layout-center-center: {
+      /* @apply(--layout-center --layout-center-justified); */
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+    };
+
+    /* self alignment */
+
+    --layout-self-start: {
+      -ms-align-self: flex-start;
+      -webkit-align-self: flex-start;
+      align-self: flex-start;
+    };
+
+    --layout-self-center: {
+      -ms-align-self: center;
+      -webkit-align-self: center;
+      align-self: center;
+    };
+
+    --layout-self-end: {
+      -ms-align-self: flex-end;
+      -webkit-align-self: flex-end;
+      align-self: flex-end;
+    };
+
+    --layout-self-stretch: {
+      -ms-align-self: stretch;
+      -webkit-align-self: stretch;
+      align-self: stretch;
+    };
+
+    /*******************************
+              Other Layout
+    *******************************/
+
+    --layout-block: {
+      display: block;
+    };
+
+    --layout-invisible: {
+      visibility: hidden !important;
+    };
+
+    --layout-relative: {
+      position: relative;
+    };
+
+    --layout-fit: {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    };
+
+    --layout-scroll: {
+      -webkit-overflow-scrolling: touch;
+      overflow: auto;
+    };
+
+    --layout-fullbleed: {
+      margin: 0;
+      height: 100vh;
+    }
+
+    /* fixed position */
+
+    --layout-fixed-top: {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+    };
+
+    --layout-fixed-right: {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+    };
+
+    --layout-fixed-bottom: {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    };
+
+    --layout-fixed-left: {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+    };
+
+  }
+
+</style>
+
+<style>
+
+  /*******************************
+            Flex Layout
+  *******************************/
+
+  html /deep/ .layout.horizontal,
+  html /deep/ .layout.horizontal-reverse,
+  html /deep/ .layout.vertical,
+  html /deep/ .layout.vertical-reverse {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+  }
+
+  html /deep/ .layout.inline {
+    display: -ms-inline-flexbox;
+    display: -webkit-inline-flex;
+    display: inline-flex;
+  }
+
+  html /deep/ .layout.horizontal {
+    -ms-flex-direction: row;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+  }
+
+  html /deep/ .layout.horizontal-reverse {
+    -ms-flex-direction: row-reverse;
+    -webkit-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+  }
+
+  html /deep/ .layout.vertical {
+    -ms-flex-direction: column;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+
+  html /deep/ .layout.vertical-reverse {
+    -ms-flex-direction: column-reverse;
+    -webkit-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+  }
+
+  html /deep/ .layout.wrap {
+    -ms-flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+
+  html /deep/ .layout.wrap-reverse {
+    -ms-flex-wrap: wrap-reverse;
+    -webkit-flex-wrap: wrap-reverse;
+    flex-wrap: wrap-reverse;
+  }
+
+  html /deep/ .flex-auto {
+    -ms-flex: 1 1 auto;
+    -webkit-flex: 1 1 auto;
+    flex: 1 1 auto;
+  }
+
+  html /deep/ .flex-none {
+    -ms-flex: none;
+    -webkit-flex: none;
+    flex: none;
+  }
+
+  html /deep/ .flex,
+  html /deep/ .flex-1 {
+    -ms-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+  }
+
+  html /deep/ .flex-2 {
+    -ms-flex: 2;
+    -webkit-flex: 2;
+    flex: 2;
+  }
+
+  html /deep/ .flex-3 {
+    -ms-flex: 3;
+    -webkit-flex: 3;
+    flex: 3;
+  }
+
+  html /deep/ .flex-4 {
+    -ms-flex: 4;
+    -webkit-flex: 4;
+    flex: 4;
+  }
+
+  html /deep/ .flex-5 {
+    -ms-flex: 5;
+    -webkit-flex: 5;
+    flex: 5;
+  }
+
+  html /deep/ .flex-6 {
+    -ms-flex: 6;
+    -webkit-flex: 6;
+    flex: 6;
+  }
+
+  html /deep/ .flex-7 {
+    -ms-flex: 7;
+    -webkit-flex: 7;
+    flex: 7;
+  }
+
+  html /deep/ .flex-8 {
+    -ms-flex: 8;
+    -webkit-flex: 8;
+    flex: 8;
+  }
+
+  html /deep/ .flex-9 {
+    -ms-flex: 9;
+    -webkit-flex: 9;
+    flex: 9;
+  }
+
+  html /deep/ .flex-10 {
+    -ms-flex: 10;
+    -webkit-flex: 10;
+    flex: 10;
+  }
+
+  html /deep/ .flex-11 {
+    -ms-flex: 11;
+    -webkit-flex: 11;
+    flex: 11;
+  }
+
+  html /deep/ .flex-12 {
+    -ms-flex: 12;
+    -webkit-flex: 12;
+    flex: 12;
+  }
+
+  /* alignment in cross axis */
+
+  html /deep/ .layout.start {
+    -ms-flex-align: start;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+  }
+
+  html /deep/ .layout.center,
+  html /deep/ .layout.center-center {
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+
+  html /deep/ .layout.end {
+    -ms-flex-align: end;
+    -webkit-align-items: flex-end;
+    align-items: flex-end;
+  }
+
+  /* alignment in main axis */
+
+  html /deep/ .layout.start-justified {
+    -ms-flex-pack: start;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+  }
+
+  html /deep/ .layout.center-justified,
+  html /deep/ .layout.center-center {
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+  }
+
+  html /deep/ .layout.end-justified {
+    -ms-flex-pack: end;
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
+  }
+
+  html /deep/ .layout.around-justified {
+    -ms-flex-pack: around;
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+  }
+
+  html /deep/ .layout.justified {
+    -ms-flex-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+  }
+
+  /* self alignment */
+
+  html /deep/ .self-start {
+    -ms-align-self: flex-start;
+    -webkit-align-self: flex-start;
+    align-self: flex-start;
+  }
+
+  html /deep/ .self-center {
+    -ms-align-self: center;
+    -webkit-align-self: center;
+    align-self: center;
+  }
+
+  html /deep/ .self-end {
+    -ms-align-self: flex-end;
+    -webkit-align-self: flex-end;
+    align-self: flex-end;
+  }
+
+  html /deep/ .self-stretch {
+    -ms-align-self: stretch;
+    -webkit-align-self: stretch;
+    align-self: stretch;
+  }
+
+  /*******************************
+            Other Layout
+  *******************************/
+
+  html /deep/ .block {
+    display: block;
+  }
+
+  /* IE 10 support for HTML5 hidden attr */
+  html /deep/ [hidden] {
+    display: none !important;
+  }
+
+  html /deep/ .invisible {
+    visibility: hidden !important;
+  }
+
+  html /deep/ .relative {
+    position: relative;
+  }
+
+  html /deep/ .fit {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  body.fullbleed {
+    margin: 0;
+    height: 100vh;
+  }
+
+  html /deep/ .scroll {
+    -webkit-overflow-scrolling: touch;
+    overflow: auto;
+  }
+
+  .fixed-bottom,
+  .fixed-left,
+  .fixed-right,
+  .fixed-top {
+    position: fixed;
+  }
+
+  html /deep/ .fixed-top {
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  html /deep/ .fixed-right {
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  html /deep/ .fixed-bottom {
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  html /deep/ .fixed-left {
+    top: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+</style>
+<style>
+
+  /*******************************
+            Flex Layout
+  *******************************/
+
+  .layout.horizontal,
+  .layout.horizontal-reverse,
+  .layout.vertical,
+  .layout.vertical-reverse {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+  }
+
+  .layout.inline {
+    display: -ms-inline-flexbox;
+    display: -webkit-inline-flex;
+    display: inline-flex;
+  }
+
+  .layout.horizontal {
+    -ms-flex-direction: row;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+  }
+
+  .layout.horizontal-reverse {
+    -ms-flex-direction: row-reverse;
+    -webkit-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+  }
+
+  .layout.vertical {
+    -ms-flex-direction: column;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .layout.vertical-reverse {
+    -ms-flex-direction: column-reverse;
+    -webkit-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+  }
+
+  .layout.wrap {
+    -ms-flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+
+  .layout.wrap-reverse {
+    -ms-flex-wrap: wrap-reverse;
+    -webkit-flex-wrap: wrap-reverse;
+    flex-wrap: wrap-reverse;
+  }
+
+  .flex-auto {
+    -ms-flex: 1 1 auto;
+    -webkit-flex: 1 1 auto;
+    flex: 1 1 auto;
+  }
+
+  .flex-none {
+    -ms-flex: none;
+    -webkit-flex: none;
+    flex: none;
+  }
+
+  .flex,
+  .flex-1 {
+    -ms-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+  }
+
+  .flex-2 {
+    -ms-flex: 2;
+    -webkit-flex: 2;
+    flex: 2;
+  }
+
+  .flex-3 {
+    -ms-flex: 3;
+    -webkit-flex: 3;
+    flex: 3;
+  }
+
+  .flex-4 {
+    -ms-flex: 4;
+    -webkit-flex: 4;
+    flex: 4;
+  }
+
+  .flex-5 {
+    -ms-flex: 5;
+    -webkit-flex: 5;
+    flex: 5;
+  }
+
+  .flex-6 {
+    -ms-flex: 6;
+    -webkit-flex: 6;
+    flex: 6;
+  }
+
+  .flex-7 {
+    -ms-flex: 7;
+    -webkit-flex: 7;
+    flex: 7;
+  }
+
+  .flex-8 {
+    -ms-flex: 8;
+    -webkit-flex: 8;
+    flex: 8;
+  }
+
+  .flex-9 {
+    -ms-flex: 9;
+    -webkit-flex: 9;
+    flex: 9;
+  }
+
+  .flex-10 {
+    -ms-flex: 10;
+    -webkit-flex: 10;
+    flex: 10;
+  }
+
+  .flex-11 {
+    -ms-flex: 11;
+    -webkit-flex: 11;
+    flex: 11;
+  }
+
+  .flex-12 {
+    -ms-flex: 12;
+    -webkit-flex: 12;
+    flex: 12;
+  }
+
+  /* alignment in cross axis */
+
+  .layout.start {
+    -ms-flex-align: start;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+  }
+
+  .layout.center,
+  .layout.center-center {
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+
+  .layout.end {
+    -ms-flex-align: end;
+    -webkit-align-items: flex-end;
+    align-items: flex-end;
+  }
+
+  /* alignment in main axis */
+
+  .layout.start-justified {
+    -ms-flex-pack: start;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+  }
+
+  .layout.center-justified,
+  .layout.center-center {
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+  }
+
+  .layout.end-justified {
+    -ms-flex-pack: end;
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
+  }
+
+  .layout.around-justified {
+    -ms-flex-pack: around;
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+  }
+
+  .layout.justified {
+    -ms-flex-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+  }
+
+  /* self alignment */
+
+  .self-start {
+    -ms-align-self: flex-start;
+    -webkit-align-self: flex-start;
+    align-self: flex-start;
+  }
+
+  .self-center {
+    -ms-align-self: center;
+    -webkit-align-self: center;
+    align-self: center;
+  }
+
+  .self-end {
+    -ms-align-self: flex-end;
+    -webkit-align-self: flex-end;
+    align-self: flex-end;
+  }
+
+  .self-stretch {
+    -ms-align-self: stretch;
+    -webkit-align-self: stretch;
+    align-self: stretch;
+  }
+
+  /*******************************
+            Other Layout
+  *******************************/
+
+  .block {
+    display: block;
+  }
+
+  /* IE 10 support for HTML5 hidden attr */
+  [hidden] {
+    display: none !important;
+  }
+
+  .invisible {
+    visibility: hidden !important;
+  }
+
+  .relative {
+    position: relative;
+  }
+
+  .fit {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  body.fullbleed {
+    margin: 0;
+    height: 100vh;
+  }
+
+  .scroll {
+    -webkit-overflow-scrolling: touch;
+    overflow: auto;
+  }
+
+  /* fixed position */
+
+  .fixed-bottom,
+  .fixed-left,
+  .fixed-right,
+  .fixed-top {
+    position: fixed;
+  }
+
+  .fixed-top {
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .fixed-right {
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .fixed-bottom {
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .fixed-left {
+    top: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+</style>
+<style is="custom-style">
+
+  :root {
+
+    --shadow-transition: {
+      transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    };
+
+    --shadow-none: {
+      box-shadow: none;
+    };
+
+    /* from http://codepen.io/shyndman/pen/c5394ddf2e8b2a5c9185904b57421cdb */
+
+    --shadow-elevation-2dp: {
+      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+                  0 1px 5px 0 rgba(0, 0, 0, 0.12),
+                  0 3px 1px -2px rgba(0, 0, 0, 0.2);
+    };
+
+    --shadow-elevation-3dp: {
+      box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14),
+                  0 1px 8px 0 rgba(0, 0, 0, 0.12),
+                  0 3px 3px -2px rgba(0, 0, 0, 0.4);
+    };
+
+    --shadow-elevation-4dp: {
+      box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
+                  0 1px 10px 0 rgba(0, 0, 0, 0.12),
+                  0 2px 4px -1px rgba(0, 0, 0, 0.4);
+    };
+
+    --shadow-elevation-6dp: {
+      box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14),
+                  0 1px 18px 0 rgba(0, 0, 0, 0.12),
+                  0 3px 5px -1px rgba(0, 0, 0, 0.4);
+    };
+
+    --shadow-elevation-8dp: {
+      box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
+                  0 3px 14px 2px rgba(0, 0, 0, 0.12),
+                  0 5px 5px -3px rgba(0, 0, 0, 0.4);
+    };
+
+    --shadow-elevation-16dp: {
+      box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14),
+                  0  6px 30px 5px rgba(0, 0, 0, 0.12),
+                  0  8px 10px -5px rgba(0, 0, 0, 0.4);
+    };
+
+  }
+
+</style>
+
+
+
 
 <style>
 /**
@@ -1852,6 +1861,8 @@ styles. All other styles should exist as single lines."
 
 
 
+
+
 </head><body><div hidden="" by-vulcanize=""><dom-module id="paper-input-container" assetpath="../bower_components/paper-input/">
   <template>
 
@@ -1884,6 +1895,7 @@ styles. All other styles should exist as single lines."
 
       .focused-line {
         height: 2px;
+        @apply(--layout-fit);
 
         -webkit-transform-origin: center center;
         transform-origin: center center;
@@ -1917,6 +1929,7 @@ styles. All other styles should exist as single lines."
 
       .unfocused-line {
         height: 1px;
+        @apply(--layout-fit);
         background: var(--paper-input-container-color, --secondary-text-color);
 
         @apply(--paper-input-container-underline);
@@ -2064,8 +2077,8 @@ styles. All other styles should exist as single lines."
     </div>
 
     <div class$="[[_computeUnderlineClass(focused,invalid)]]">
-      <div class="unfocused-line fit"></div>
-      <div class="focused-line fit"></div>
+      <div class="unfocused-line"></div>
+      <div class="focused-line"></div>
     </div>
 
     <div class$="[[_computeAddOnContentClass(focused,invalid)]]">
@@ -2133,6 +2146,14 @@ styles. All other styles should exist as single lines."
   iron-icon {
     margin-left: 10px;
   }
+
+  .container {
+    @apply(--layout-horizontal);
+  }
+
+  input {
+    @apply(--layout-flex);
+  }
   </style>
 
   <template>
@@ -2140,8 +2161,8 @@ styles. All other styles should exist as single lines."
 
       <label hidden$="[[!label]]">[[label]]</label>
 
-      <div class="horizontal layout">
-        <input is="iron-input" id="input" class="flex" aria-labelledby$="[[_ariaLabelledBy]]" aria-describedby$="[[_ariaDescribedBy]]" bind-value="{{value}}" prevent-invalid-input="" allowed-pattern="[0-9]" required$="[[required]]" type="tel" maxlength$="[[_requiredLength]]" autocomplete="cc-csc" name$="[[name]]" disabled$="[[disabled]]" invalid="{{invalid}}" autofocus$="[[autofocus]]" inputmode$="[[inputmode]]" placeholder$="[[placeholder]]" readonly$="[[readonly]]" size$="[[size]]">
+      <div class="container">
+        <input is="iron-input" id="input" aria-labelledby$="[[_ariaLabelledBy]]" aria-describedby$="[[_ariaDescribedBy]]" bind-value="{{value}}" prevent-invalid-input="" allowed-pattern="[0-9]" required$="[[required]]" type="tel" maxlength$="[[_requiredLength]]" autocomplete="cc-csc" name$="[[name]]" disabled$="[[disabled]]" invalid="{{invalid}}" autofocus$="[[autofocus]]" inputmode$="[[inputmode]]" placeholder$="[[placeholder]]" readonly$="[[readonly]]" size$="[[size]]">
 
         <iron-icon id="icon" src="../bower_components/gold-cc-cvc-input/cvc_hint.png" hidden$="[[_amex]]" alt="cvc"></iron-icon>
         <iron-icon id="amexIcon" hidden$="[[!_amex]]" src="../bower_components/gold-cc-cvc-input/cvc_hint_amex.png" alt="amex cvc"></iron-icon>
@@ -2237,6 +2258,10 @@ styles. All other styles should exist as single lines."
     --iron-icon-width: 40px;
     --iron-icon-height: 24px;
   }
+
+  .container {
+    @apply(--layout-horizontal);
+  }
   </style>
 
   <template>
@@ -2245,7 +2270,7 @@ styles. All other styles should exist as single lines."
 
       <label hidden$="[[!label]]">[[label]]</label>
 
-      <div class="horizontal layout">
+      <div class="container">
         <input is="iron-input" id="input" aria-labelledby$="[[_ariaLabelledBy]]" aria-describedby$="[[_ariaDescribedBy]]" bind-value="{{value}}" type="tel" maxlength="30" required$="[[required]]" allowed-pattern="[0-9 ]" prevent-invalid-input="" autocomplete="cc-number" name$="[[name]]" disabled$="[[disabled]]" invalid="{{invalid}}" autofocus$="[[autofocus]]" inputmode$="[[inputmode]]" placeholder$="[[placeholder]]" readonly$="[[readonly]]" size$="[[size]]">
         <div class="icon-container"><iron-icon id="icon"></iron-icon></div>
       </div>
@@ -2296,11 +2321,23 @@ styles. All other styles should exist as single lines."
     width: 40px;
   }
 
+  .country-code {
+    @apply(--gold-phone-input-country-code);
+  }
+
+  .container {
+    @apply(--layout-horizontal);
+  }
+
   /* TODO(notwaldorf): The style applied by paper-input-container is more
    * specific, and we need the important to override it. This will go away
    * once we can refactor this element to use the paper-input suffix */
   label {
     left: 40px !important;
+  }
+
+  input {
+    @apply(--layout-flex);
   }
 
   </style>
@@ -2310,10 +2347,10 @@ styles. All other styles should exist as single lines."
 
       <label hidden$="[[!label]]">[[label]]</label>
 
-      <div class="horizontal layout">
-        <span>+<span>[[countryCode]]</span></span>
+      <div class="container">
+         <span class="country-code">+[[countryCode]]</span>
 
-        <input is="iron-input" id="input" class="flex" aria-labelledby$="[[_ariaLabelledBy]]" aria-describedby$="[[_ariaDescribedBy]]" required$="[[required]]" bind-value="{{value}}" name$="[[name]]" allowed-pattern="[0-9\-]" autocomplete="tel" type="tel" prevent-invalid-input="" disabled$="[[disabled]]" invalid="{{invalid}}" autofocus$="[[autofocus]]" inputmode$="[[inputmode]]" placeholder$="[[placeholder]]" readonly$="[[readonly]]" maxlength$="[[maxlength]]" size$="[[size]]">
+        <input is="iron-input" id="input" aria-labelledby$="[[_ariaLabelledBy]]" aria-describedby$="[[_ariaDescribedBy]]" required$="[[required]]" bind-value="{{value}}" name$="[[name]]" allowed-pattern="[0-9\-]" autocomplete="tel" type="tel" prevent-invalid-input="" disabled$="[[disabled]]" invalid="{{invalid}}" autofocus$="[[autofocus]]" inputmode$="[[inputmode]]" placeholder$="[[placeholder]]" readonly$="[[readonly]]" maxlength$="[[maxlength]]" size$="[[size]]">
       </div>
 
       <template is="dom-if" if="[[errorMessage]]">
@@ -2747,10 +2784,6 @@ marked-element {
            page, and that would be bad. */
         -webkit-transform: translate(0, 0);
         transform: translate3d(0, 0, 0);
-      }
-
-      :host([noink]) {
-        pointer-events: none;
       }
 
       #background,
@@ -3596,8 +3629,9 @@ iron-doc-property[configuration] {
         @apply(--paper-card-header);
       }
 
-      .header img {
+      .header iron-image {
         width: 100%;
+        --iron-image-width: 100%;
         pointer-events: none;
         @apply(--paper-card-header-image);
       }
@@ -3605,7 +3639,7 @@ iron-doc-property[configuration] {
       .header .title-text {
         padding: 16px;
         font-size: 24px;
-        font-weight: bold;
+        font-weight: 400;
         color: var(--paper-card-header-color, #000);
         @apply(--paper-card-header-text);
       }
@@ -3631,7 +3665,7 @@ iron-doc-property[configuration] {
     </style>
 
     <div class="header">
-      <img hidden$="[[!image]]" src="[[image]]">
+      <iron-image hidden$="[[!image]]" src="[[image]]" preload$="[[preloadImage]]" fade$="[[fadeImage]]"></iron-image>
       <div hidden$="[[!heading]]" class$="[[_computeHeadingClass(image)]]">[[heading]]</div>
     </div>
 
@@ -3662,6 +3696,7 @@ iron-doc-property[configuration] {
         position: relative;
         width: 18px;
         height: 18px;
+        min-width: 18px;
         vertical-align: middle;
         background-color: var(--paper-checkbox-unchecked-background-color, transparent);
       }
@@ -3706,31 +3741,19 @@ iron-doc-property[configuration] {
 
       @-webkit-keyframes checkmark-expand {
         0% {
-          top: 9px;
-          left: 6px;
-          width: 0px;
-          height: 0px;
+          -webkit-transform: scale(0, 0) rotate(45deg);
         }
         100% {
-          top: -1px;
-          left: 4px;
-          width: 5px;
-          height: 10px;
+          -webkit-transform: scale(1, 1) rotate(45deg);
         }
       }
 
       @keyframes checkmark-expand {
         0% {
-          top: 9px;
-          left: 6px;
-          width: 0px;
-          height: 0px;
+          transform: scale(0, 0) rotate(45deg);
         }
         100% {
-          top: -1px;
-          left: 4px;
-          width: 5px;
-          height: 10px;
+          transform: scale(1, 1) rotate(45deg);
         }
       }
 
@@ -3740,11 +3763,7 @@ iron-doc-property[configuration] {
       }
 
       #checkmark {
-        -webkit-transform: rotate(45deg);
-        transform: rotate(45deg);
         position: absolute;
-        top: -1px;
-        left: 4px;
         width: 5px;
         height: 10px;
         border-style: solid;
@@ -3753,6 +3772,8 @@ iron-doc-property[configuration] {
         border-right-width: 2px;
         border-bottom-width: 2px;
         border-color: var(--paper-checkbox-checkmark-color, white);
+        transform-origin: 97% 86%;
+        -webkit-transform-origin: 97% 86%;
       }
 
       /* label */
@@ -3810,74 +3831,65 @@ iron-doc-property[configuration] {
   </template>
 
   </dom-module>
-<dom-module id="paper-dialog" assetpath="../bower_components/paper-dialog/">
-
-  <style>
-/*
-@license
-Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
-This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
-The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
-The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
-Code distributed by Google as part of the polymer project is also
-subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
-*/
-
-:host {
-  display: block;
-  margin: 24px 40px;
-  -webkit-overflow-scrolling: touch;
-
-  background: var(--paper-dialog-background-color, --primary-background-color);
-  color: var(--paper-dialog-color, --primary-text-color);
-
-  @apply(--paper-font-body1);
-  @apply(--shadow-elevation-16dp);
-  @apply(--paper-dialog);
-}
-
-:host > ::content > * {
-  margin-top: 20px;
-  padding: 0 24px;
-}
-
-:host > ::content > .no-padding {
-  padding: 0;
-}
-
-:host > ::content > *:first-child {
-  margin-top: 24px;
-}
-
-:host > ::content > *:last-child {
-  margin-bottom: 24px;
-}
-
-:host > ::content h2 {
-  position: relative;
-  margin: 0;
-  @apply(--paper-font-title);
-
-  @apply(--paper-dialog-title);
-}
-
-:host > ::content .buttons {
-  position: relative;
-  padding: 8px 8px 8px 24px;
-  margin: 0;
-
-  color: var(--paper-dialog-button-color, --default-primary-color);
-
-  @apply(--layout-horizontal);
-  @apply(--layout-end-justified);
-}
-
-</style>
-
+<dom-module id="paper-dialog-shared-styles" assetpath="../bower_components/paper-dialog-behavior/">
   <template>
+    <style>
+      :host {
+        display: block;
+        margin: 24px 40px;
+        -webkit-overflow-scrolling: touch;
+
+        background: var(--paper-dialog-background-color, --primary-background-color);
+        color: var(--paper-dialog-color, --primary-text-color);
+
+        @apply(--paper-font-body1);
+        @apply(--shadow-elevation-16dp);
+        @apply(--paper-dialog);
+      }
+
+      :host > ::content > * {
+        margin-top: 20px;
+        padding: 0 24px;
+      }
+
+      :host > ::content > .no-padding {
+        padding: 0;
+      }
+
+      :host > ::content > *:first-child {
+        margin-top: 24px;
+      }
+
+      :host > ::content > *:last-child {
+        margin-bottom: 24px;
+      }
+
+      :host > ::content h2 {
+        position: relative;
+        margin: 0;
+        @apply(--paper-font-title);
+
+        @apply(--paper-dialog-title);
+      }
+
+      :host > ::content .buttons {
+        position: relative;
+        padding: 8px 8px 8px 24px;
+        margin: 0;
+
+        color: var(--paper-dialog-button-color, --default-primary-color);
+
+        @apply(--layout-horizontal);
+        @apply(--layout-end-justified);
+      }
+    </style>
+  </template>
+</dom-module>
+<dom-module id="paper-dialog" assetpath="../bower_components/paper-dialog/">
+  <template>
+    <style include="paper-dialog-shared-styles"></style>
     <content></content>
   </template>
-
 </dom-module>
 
 <dom-module id="paper-dialog-scrollable" assetpath="../bower_components/paper-dialog-scrollable/">
@@ -3913,8 +3925,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       padding: 0 24px;
 
       @apply(--layout-scroll);
-
       @apply(--paper-dialog-scrollable);
+    }
+
+    .fit {
+      @apply(--layout-fit);
     }
   </style>
 
@@ -4588,6 +4603,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         content: '';
         background: currentColor;
         opacity: var(--dark-divider-opacity);
+        pointer-events: none;
 
         @apply(--paper-item-focused-before);
       }
@@ -4626,10 +4642,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       .content-icon {
         width: var(--paper-item-icon-width, 56px);
+        @apply(--layout-horizontal);
+        @apply(--layout-center);
       }
     </style>
 
-    <div id="contentIcon" class="content-icon layout horizontal center">
+    <div id="contentIcon" class="content-icon">
       <content select="[item-icon]"></content>
     </div>
     <content></content>
@@ -4672,118 +4690,67 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   </template>
 
   </dom-module>
-<dom-module id="paper-menu" assetpath="../bower_components/paper-menu/">
-  <style>
-/**
-@license
-Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
-This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
-The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
-The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
-Code distributed by Google as part of the polymer project is also
-subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
-*/
-
-/* need a wrapper element to make this higher specificity than the :host rule in paper-item */
-.selectable-content > ::content > .iron-selected {
-  font-weight: bold;
-
-  @apply(--paper-menu-selected-item);
-}
-
-.selectable-content > ::content > [disabled] {
-  color: var(--paper-menu-disabled-color, --disabled-text-color);
-}
-
-.selectable-content > ::content > *:focus {
-  position: relative;
-  outline: 0;
-
-  @apply(--paper-menu-focused-item);
-}
-
-.selectable-content > ::content > *:focus:after {
-  @apply(--layout-fit);
-  background: currentColor;
-  opacity: var(--dark-divider-opacity);
-  content: '';
-
-  @apply(--paper-menu-focused-item-after);
-}
-
-.selectable-content > ::content > *[colored]:focus:after {
-  opacity: 0.26;
-}
-
-</style>
-
-  <style>
-    :host {
-      display: block;
-      padding: 8px 0;
-
-      background: var(--paper-menu-background-color, --primary-background-color);
-      color: var(--paper-menu-color, --primary-text-color);
-
-      @apply(--paper-menu);
-    }
-  </style>
+<dom-module id="paper-menu-shared-styles" assetpath="../bower_components/paper-menu/">
   <template>
+    <style>
+      /* need a wrapper element to make this higher specificity than the :host rule in paper-item */
+      .selectable-content > ::content > .iron-selected {
+        font-weight: bold;
+
+        @apply(--paper-menu-selected-item);
+      }
+
+      .selectable-content > ::content > [disabled] {
+        color: var(--paper-menu-disabled-color, --disabled-text-color);
+      }
+
+      .selectable-content > ::content > *:focus {
+        position: relative;
+        outline: 0;
+
+        @apply(--paper-menu-focused-item);
+      }
+
+      .selectable-content > ::content > *:focus:after {
+        @apply(--layout-fit);
+        background: currentColor;
+        opacity: var(--dark-divider-opacity);
+        content: '';
+
+        @apply(--paper-menu-focused-item-after);
+      }
+
+      .selectable-content > ::content > *[colored]:focus:after {
+        opacity: 0.26;
+      }
+    </style>
+  </template>
+</dom-module>
+<dom-module id="paper-menu" assetpath="../bower_components/paper-menu/">
+  <template>
+    <style include="paper-menu-shared-styles"></style>
+    <style>
+      :host {
+        display: block;
+        padding: 8px 0;
+
+        background: var(--paper-menu-background-color, --primary-background-color);
+        color: var(--paper-menu-color, --primary-text-color);
+
+        @apply(--paper-menu);
+      }
+    </style>
 
     <div class="selectable-content">
       <content></content>
     </div>
-
   </template>
 
-</dom-module>
-
+  </dom-module>
 <dom-module id="paper-submenu" assetpath="../bower_components/paper-menu/">
-  <style>
-/**
-@license
-Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
-This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
-The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
-The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
-Code distributed by Google as part of the polymer project is also
-subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
-*/
-
-/* need a wrapper element to make this higher specificity than the :host rule in paper-item */
-.selectable-content > ::content > .iron-selected {
-  font-weight: bold;
-
-  @apply(--paper-menu-selected-item);
-}
-
-.selectable-content > ::content > [disabled] {
-  color: var(--paper-menu-disabled-color, --disabled-text-color);
-}
-
-.selectable-content > ::content > *:focus {
-  position: relative;
-  outline: 0;
-
-  @apply(--paper-menu-focused-item);
-}
-
-.selectable-content > ::content > *:focus:after {
-  @apply(--layout-fit);
-  background: currentColor;
-  opacity: var(--dark-divider-opacity);
-  content: '';
-
-  @apply(--paper-menu-focused-item-after);
-}
-
-.selectable-content > ::content > *[colored]:focus:after {
-  opacity: 0.26;
-}
-
-</style>
-
   <template>
+    <style include="paper-menu-shared-styles"></style>
+
     <div class="selectable-content" on-tap="_onTap">
       <content id="trigger" select=".menu-trigger"></content>
     </div>
@@ -4792,8 +4759,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </iron-collapse>
   </template>
 
-</dom-module>
-
+  </dom-module>
 <dom-module id="paper-progress" assetpath="../bower_components/paper-progress/">
   <style>
     :host {
@@ -5108,7 +5074,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <template strip-whitespace="">
     <style>
       :host {
-        display: inline-block;
+        @apply(--layout);
+        @apply(--layout-justified);
+        @apply(--layout-center);
         width: 200px;
         cursor: default;
         -webkit-user-select: none;
@@ -5129,8 +5097,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       #sliderContainer {
         position: relative;
-        width: calc(100% - 32px);
-        height: 32px;
+        width: 100%;
+        height: calc(30px + var(--paper-slider-height, 2px));
+        margin-left: calc(15px + var(--paper-slider-height, 2px)/2);
+        margin-right: calc(15px + var(--paper-slider-height, 2px)/2);
       }
 
       #sliderContainer:focus {
@@ -5138,70 +5108,67 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
 
       #sliderContainer.editable {
-        float: left;
-        width: calc(100% - 72px);
-        margin: 12px 0;
+        margin-top: 12px;
+        margin-bottom: 12px;
       }
 
       .bar-container {
         position: absolute;
         top: 0;
-        left: 16px;
-        height: 100%;
-        width: 100%;
+        bottom: 0;
+        left: 0;
+        right: 0;
         overflow: hidden;
       }
 
       .ring > .bar-container {
-        left: 20px;
-        width: calc(100% - 4px);
+        left: calc(5px + var(--paper-slider-height, 2px)/2);
         transition: left 0.18s ease, width 0.18s ease;
-      }
-
-      .ring.expand:not(.pin) > .bar-container {
-        left: 30px;
-        width: calc(100% - 14px);
       }
 
       .ring.expand.dragging > .bar-container {
         transition: none;
       }
 
+      .ring.expand:not(.pin) > .bar-container {
+        left: calc(15px + var(--paper-slider-height, 2px)/2);
+      }
+
       #sliderBar {
-        position: absolute;
-        top: 15px;
-        left: 0;
+        padding: 15px 0;
         width: 100%;
-        padding: 8px 0;
-        margin: -8px 0;
         background-color: var(--paper-slider-bar-color, transparent);
         --paper-progress-height: var(--paper-slider-height, 2px);
       }
 
       .ring #sliderBar {
-        left: -4px;
-        width: calc(100% + 4px);
+        margin-left: calc(-5px - var(--paper-slider-height, 2px)/2);
+        width: calc(100% + 5px + var(--paper-slider-height, 2px)/2);
       }
-
       .ring.expand:not(.pin) #sliderBar {
-        left: -14px;
-        width: calc(100% + 14px);
+        margin-left: calc(-15px - var(--paper-slider-height, 2px)/2);
+        width: calc(100% + 15px + var(--paper-slider-height, 2px)/2);
       }
 
       .slider-markers {
         position: absolute;
-        top: 15px;
-        left: 15px;
-        height: 2px;
-        width: calc(100% + 2px);
+        top: calc(14px + var(--paper-slider-height,2px)/2);
+        height: var(--paper-slider-height, 2px);
+        left: 0;
+        right: -1px;
         box-sizing: border-box;
         pointer-events: none;
+        @apply(--layout-horizontal);
       }
 
+      .slider-marker {
+        @apply(--layout-flex);
+      }
       .slider-markers::after,
       .slider-marker::after {
         content: "";
         display: block;
+        margin-left: -1px;
         width: 2px;
         height: 2px;
         border-radius: 50%;
@@ -5209,15 +5176,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
 
       #sliderKnob {
-        @apply(--layout-center-justified);
-        @apply(--layout-center);
-        @apply(--layout-horizontal);
-
         position: absolute;
         left: 0;
         top: 0;
-        width: 32px;
-        height: 32px;
+        margin-left: calc(-15px - var(--paper-slider-height, 2px)/2);
+        width: calc(30px + var(--paper-slider-height, 2px));
+        height: calc(30px + var(--paper-slider-height, 2px));
       }
 
       .transiting > #sliderKnob {
@@ -5238,20 +5202,22 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
 
       #sliderKnobInner {
-        width: 12px;
-        height: 12px;
+        margin: 10px;
+        width: calc(100% - 20px);
+        height: calc(100% - 20px);
         border-radius: 50%;
         background-color: var(--paper-slider-knob-color, --google-blue-700);
 
         -moz-box-sizing: border-box;
         box-sizing: border-box;
 
-        transition-property: height, width, background-color, border;
+        transition-property: margin, height, width, background-color, border;
         transition-duration: 0.1s;
         transition-timing-function: ease;
       }
 
       .expand:not(.pin) > #sliderKnob > #sliderKnobInner {
+        margin: 0;
         width: 100%;
         height: 100%;
 
@@ -5272,10 +5238,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         content: "";
         position: absolute;
         top: 0;
-        left: 0;
+        left: 50%;
+        margin-left: -13px;
         width: 26px;
         height: 26px;
-        margin-left: 3px;
         border-radius: 50% 50% 50% 0;
 
         -webkit-transform: rotate(-45deg) scale(0) translate(0);
@@ -5301,7 +5267,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         content: attr(value);
         position: absolute;
         top: 0;
-        left: 0;
+        left: 50%;
+        margin-left: -16px;
         width: 32px;
         height: 26px;
         text-align: center;
@@ -5320,7 +5287,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       /* paper-input */
       .slider-input {
         width: 50px;
-        float: right;
         overflow: hidden;
         --paper-input-container-input: {
           text-align: center;
@@ -5332,9 +5298,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         pointer-events: none;
       }
 
+      .disabled > #sliderKnob {
+        top: 2px;
+        margin-left: calc(-13px - var(--paper-slider-height, 2px)/2);
+        width: calc(26px + var(--paper-slider-height, 2px));
+        height: calc(26px + var(--paper-slider-height, 2px));
+      }
+
       .disabled > #sliderKnob > #sliderKnobInner {
-        width: 8px;
-        height: 8px;
         background-color: var(--paper-slider-disabled-knob-color, --google-grey-500);
       }
 
@@ -5355,14 +5326,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       </div>
 
       <template is="dom-if" if="[[snaps]]">
-        <div class="slider-markers horizontal layout">
+        <div class="slider-markers">
           <template is="dom-repeat" items="[[markers]]">
-            <div class="slider-marker flex"></div>
+            <div class="slider-marker"></div>
           </template>
         </div>
       </template>
 
-      <div id="sliderKnob" class="center-justified center horizontal layout" on-down="_knobdown" on-up="_resetKnob" on-track="_onTrack" on-transitionend="_knobTransitionEnd">
+      <div id="sliderKnob" on-down="_knobdown" on-up="_resetKnob" on-track="_onTrack" on-transitionend="_knobTransitionEnd">
           <div id="sliderKnobInner" value$="[[immediateValue]]"></div>
       </div>
     </div>
@@ -5780,7 +5751,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       -webkit-transform: translateZ(0);
       transform: translateZ(0);
       transition: opacity 0.1s cubic-bezier(0.4, 0.0, 1, 1);
-
+      @apply(--layout-horizontal);
+      @apply(--layout-center-center);
+      @apply(--layout-flex-auto);
       @apply(--paper-tab-content);
     }
 
@@ -5813,7 +5786,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <template>
 
-    <div class="tab-content flex-auto center-center horizontal layout">
+    <div class="tab-content">
       <content></content>
     </div>
 
@@ -5857,6 +5830,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       height: 100%;
       white-space: nowrap;
       overflow: hidden;
+      @apply(--layout-flex);
     }
 
     #tabsContent {
@@ -5866,6 +5840,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     #tabsContent.scrollable {
       position: absolute;
       white-space: nowrap;
+    }
+
+    #tabsContent.horizontal {
+      @apply(--layout-horizontal);
     }
 
     .hidden {
@@ -5926,7 +5904,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     <paper-icon-button icon="paper-tabs:chevron-left" class$="[[_computeScrollButtonClass(_leftHidden, scrollable, hideScrollButtons)]]" on-up="_onScrollButtonUp" on-down="_onLeftScrollButtonDown" tabindex="-1"></paper-icon-button>
 
-    <div id="tabsContainer" class="flex" on-track="_scroll" on-down="_down">
+    <div id="tabsContainer" on-track="_scroll" on-down="_down">
 
       <div id="tabsContent" class$="[[_computeTabsContentClass(scrollable)]]">
 
@@ -6114,172 +6092,190 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   </dom-module>
 <dom-module id="paper-toolbar" assetpath="../bower_components/paper-toolbar/">
-
-  <style>
-    :host {
-      /* technical */
-      display: block;
-      position: relative;
-      box-sizing: border-box;
-      -moz-box-sizing: border-box;
-
-      /* size */
-      height: 64px;
-
-      background: var(--paper-toolbar-background, --default-primary-color);
-      color: var(--paper-toolbar-color, --text-primary-color);
-
-      @apply(--paper-toolbar);
-    }
-
-    :host(.animate) {
-      /* transition */
-      transition: height 0.18s ease-in;
-    }
-
-    :host(.medium-tall) {
-      height: 128px;
-    }
-
-    :host(.tall) {
-      height: 192px;
-    }
-
-    .toolbar-tools {
-      position: relative;
-      height: 64px;
-      padding: 0 16px;
-      pointer-events: none;
-    }
-
-    /*
-     * TODO: Where should media query breakpoints live so they can be shared between elements?
-     */
-
-    @media (max-width: 639px) {
+  <template>
+    <style>
       :host {
-        height: 56px;
+        /* technical */
+        display: block;
+        position: relative;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+
+        /* size */
+        height: var(--paper-toolbar-height, 64px);
+
+        background: var(--paper-toolbar-background, --default-primary-color);
+        color: var(--paper-toolbar-color, --text-primary-color);
+
+        @apply(--paper-toolbar);
+      }
+
+      :host(.animate) {
+        /* transition */
+        transition: height 0.18s ease-in;
       }
 
       :host(.medium-tall) {
-        height: 112px;
+        height: calc(var(--paper-toolbar-height, 64px) * 2);
+        @apply(--paper-toolbar-medium);
       }
 
       :host(.tall) {
-        height: 168px;
+        height: calc(var(--paper-toolbar-height, 64px) * 3);
+        @apply(--paper-toolbar-tall);
       }
 
       .toolbar-tools {
-        height: 56px;
+        position: relative;
+        height: var(--paper-toolbar-height, 64px);
+        padding: 0 16px;
+        pointer-events: none;
+        @apply(--layout-horizontal);
+        @apply(--layout-center);
       }
-    }
-
-    #topBar {
-      position: relative;
-    }
-
-    /* middle bar */
-    #middleBar {
-      position: absolute;
-      top: 0;
-      right: 0;
-      left: 0;
-    }
-
-    :host(.tall) #middleBar,
-    :host(.medium-tall) #middleBar {
-      -webkit-transform: translateY(100%);
-      transform: translateY(100%);
-    }
-
-    /* bottom bar */
-    #bottomBar {
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      left: 0;
-    }
-
-    /*
-     * make elements (e.g. buttons) respond to mouse/touch events
-     *
-     * `.toolbar-tools` disables touch events so multiple toolbars can stack and not
-     * absorb events. All children must have pointer events re-enabled to work as
-     * expected.
-     */
-    .toolbar-tools > ::content > *:not([disabled]) {
-      pointer-events: auto;
-    }
-
-    .toolbar-tools > ::content .title {
-      @apply(--paper-font-title);
-      @apply(--layout-flex);
-
-      pointer-events: none;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      overflow: hidden;
 
       /*
-       * Polymer/polymer/issues/1525
-       * --paper-font-title defines a `font-weight`
-       * let's override its value, but we need `important!`
-       * because all mixins are resolved in rule's selector that has higher precedence
-       * than the current selector.
+       * TODO: Where should media query breakpoints live so they can be shared between elements?
        */
-      font-weight: 400 !important;
-    }
 
-    /**
-     * TODO: Refactor these selectors
-     * Work in progress.
-     */
-    .toolbar-tools > ::content paper-icon-button[icon=menu] {
-      margin-right: 24px;
-    }
+      @media (max-width: 639px) {
+        :host {
+          height: var(--paper-toolbar-sm-height, 56px);
+        }
 
-    .toolbar-tools > ::content > .title,
-    .toolbar-tools > ::content[select=".middle"] > .title,
-    .toolbar-tools > ::content[select=".bottom"] > .title {
-      margin-left: 56px;
-    }
+        :host(.medium-tall) {
+          height: calc(var(--paper-toolbar-sm-height, 56px) * 2);
+        }
 
-    .toolbar-tools > ::content > paper-icon-button + .title,
-    .toolbar-tools > ::content[select=".middle"] paper-icon-button + .title,
-    .toolbar-tools > ::content[select=".bottom"] paper-icon-button + .title {
-      margin-left: 0;
-    }
+        :host(.tall) {
+          height: calc(var(--paper-toolbar-sm-height, 56px) * 3);
+        }
 
-    .toolbar-tools > ::content > .fit {
-      position: absolute;
-      top: auto;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      width: auto;
-      margin: 0;
-    }
+        .toolbar-tools {
+          height: var(--paper-toolbar-sm-height, 56px);
+        }
+      }
 
-  </style>
+      #topBar {
+        position: relative;
+      }
 
-  <template>
+      /* middle bar */
+      #middleBar {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+      }
 
-    <div id="topBar" class$="[[_computeBarClassName(justify)]]">
+      :host(.tall) #middleBar,
+      :host(.medium-tall) #middleBar {
+        -webkit-transform: translateY(100%);
+        transform: translateY(100%);
+      }
+
+      /* bottom bar */
+      #bottomBar {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+      }
+
+      /*
+       * make elements (e.g. buttons) respond to mouse/touch events
+       *
+       * `.toolbar-tools` disables touch events so multiple toolbars can stack and not
+       * absorb events. All children must have pointer events re-enabled to work as
+       * expected.
+       */
+      .toolbar-tools > ::content > *:not([disabled]) {
+        pointer-events: auto;
+      }
+
+      .toolbar-tools > ::content .title {
+        @apply(--paper-font-common-base);
+
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 1;
+        pointer-events: none;
+
+        @apply(--layout-flex);
+        @apply(--paper-toolbar-title);
+      }
+
+      /**
+       * TODO: Refactor these selectors
+       * Work in progress.
+       */
+      .toolbar-tools > ::content paper-icon-button[icon=menu] {
+        margin-right: 24px;
+      }
+
+      .toolbar-tools > ::content > .title,
+      .toolbar-tools > ::content[select=".middle"] > .title,
+      .toolbar-tools > ::content[select=".bottom"] > .title {
+        margin-left: 56px;
+      }
+
+      .toolbar-tools > ::content > paper-icon-button + .title,
+      .toolbar-tools > ::content[select=".middle"] paper-icon-button + .title,
+      .toolbar-tools > ::content[select=".bottom"] paper-icon-button + .title {
+        margin-left: 0;
+      }
+
+      .toolbar-tools > ::content > .fit {
+        position: absolute;
+        top: auto;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: auto;
+        margin: 0;
+      }
+
+      /* TODO(noms): Until we have a better solution for classes that don't use
+       * /deep/ create our own.
+       */
+      .start-justified {
+        @apply(--layout-start-justified);
+      }
+
+      .center-justified {
+        @apply(--layout-center-justified);
+      }
+
+      .end-justified {
+        @apply(--layout-end-justified);
+      }
+
+      .around-justified {
+        @apply(--layout-around-justified);
+      }
+
+      .justified {
+        @apply(--layout-justified);
+      }
+    </style>
+
+    <div id="topBar" class$="toolbar-tools [[_computeBarExtraClasses(justify)]]">
       <content select=":not(.middle):not(.bottom)"></content>
     </div>
 
-    <div id="middleBar" class$="[[_computeBarClassName(middleJustify)]]">
+    <div id="middleBar" class$="toolbar-tools [[_computeBarExtraClasses(middleJustify)]]">
       <content select=".middle"></content>
     </div>
 
-    <div id="bottomBar" class$="[[_computeBarClassName(bottomJustify)]]">
+    <div id="bottomBar" class$="toolbar-tools [[_computeBarExtraClasses(bottomJustify)]]">
       <content select=".bottom"></content>
     </div>
-
   </template>
 
-</dom-module>
-
+  </dom-module>
 <dom-module id="paper-tooltip" assetpath="../bower_components/paper-tooltip/">
   <template>
     <style>
@@ -6326,7 +6322,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   </dom-module>
 <dom-module id="paper-scroll-header-panel" assetpath="../bower_components/paper-scroll-header-panel/">
 
-  <style>C
+  <style>
     :host {
       display: block;
       position: relative;
